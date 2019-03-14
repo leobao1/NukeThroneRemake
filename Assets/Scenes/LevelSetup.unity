@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followTarget: {fileID: 2125610455}
+  speed: 3
   offset: {x: 0, y: 0, z: 0}
 --- !u!1 &939234673
 GameObject:
@@ -229,6 +230,7 @@ GameObject:
   - component: {fileID: 939234675}
   - component: {fileID: 939234674}
   - component: {fileID: 939234676}
+  - component: {fileID: 939234677}
   m_Layer: 0
   m_Name: Generator
   m_TagString: Untagged
@@ -276,6 +278,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca414acf35db15b4da3f040329d4d27b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &939234677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939234673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac708b0ecae530e4992f41e7666651ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crosshair: {fileID: 2800000, guid: 2c66ab811a8371c438447973b892d37f, type: 3}
 --- !u!1 &2105712538
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,6 +382,7 @@ GameObject:
   - component: {fileID: 2125610456}
   - component: {fileID: 2125610459}
   - component: {fileID: 2125610460}
+  - component: {fileID: 2125610457}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -390,6 +406,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!114 &2125610457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125610455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 735b84acebaf146439ef2588feb3bb03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  proj: {fileID: 1407224842197806172, guid: 0da52dc94dfe8a542884df4eb840088c, type: 3}
+  speed: 0
 --- !u!4 &2125610458
 Transform:
   m_ObjectHideFlags: 0
