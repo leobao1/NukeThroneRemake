@@ -9,7 +9,6 @@ public class Fire : MonoBehaviour
 
     void Update() {
         if (Input.GetMouseButtonDown(0)) { 
-            Debug.Log("why");
             Vector2 clickPos = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
             GameObject clone;
             clone = Instantiate(proj, transform.position, Quaternion.identity);
