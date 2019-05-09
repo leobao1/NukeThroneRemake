@@ -6,6 +6,8 @@ public class PlayerControl : MonoBehaviour {
     public float speed;
     public Transform player;
     public Transform gun;
+    public Transform gunTip;
+    public GameObject projectile;
 
     private Rigidbody2D rb;
 
@@ -15,6 +17,8 @@ public class PlayerControl : MonoBehaviour {
     Vector3 playerPos;
     Vector3 mousePos;
     Vector3 mouseVec; //points from player to mouse
+    float angle;
+    bool gunPress;
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();
@@ -24,6 +28,7 @@ public class PlayerControl : MonoBehaviour {
         GetInputs();
         MovePlayer();
         RotateGun();
+        Shoot();
     }
 
     void GetInputs() {
@@ -35,6 +40,7 @@ public class PlayerControl : MonoBehaviour {
         mousePos.z = 0;
 
         mouseVec = (mousePos - playerPos).normalized;
+        gunPress = Input.GetMouseButtonDown(0);
     }
 
     void MovePlayer() {
@@ -47,9 +53,15 @@ public class PlayerControl : MonoBehaviour {
     }
 
     void RotateGun() {
-        float angle = -1 * Mathf.Atan2(mouseVec.y, mouseVec.x) * Mathf.Rad2Deg;
-        gun.rotation = Quaternion.AngleAxis(angle, Vector3.back);
-        //gun.eulerAngles = new Vector3(0, 0, angle);
-        Debug.Log(angle);
+        angle = Mathf.Atan2(mouseVec.y, mouseVec.x) * Mathf.Rad2Deg;
+        gun.eulerAngles = new Vector3(0, 0, angle);
+    }
+
+    void Shoot() {
+        if (gunPress) {
+            Quaternion rotation = Quaternion.Euler(0, 0, angle);
+            Proj newProj = Instantiate(projectile, gunTip.position, rotation).GetComponent<Proj>(); ;
+            newProj.Construct(mouseVec);
+        }
     }
 }
