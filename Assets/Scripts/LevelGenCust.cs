@@ -14,6 +14,11 @@ public class LevelGenCust : MonoBehaviour
 
     List<walker> walkers;
     public float chanceWalkerChangeDir, chanceWalkerSpawn, chanceWalkerDestoy;//Default: 0.5,0.05,0.05
+    /*To use these vars:
+     * chanceWalkerChange: Lower values will give more tunnels
+     * chanceWalkerSpawn: Higher values will give more bigger spaces
+     * 
+     */
     public int maxWalkers; //Default:10
     public float percentToFill; // Default: 0.2
     public GameObject wallObj, floorObj;

@@ -4,29 +4,41 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-    public GameObject followTarget;
-    public float speed;
+    public Transform followTarget;
+    public float speed;//speed doesnt do anything rn
+    public float maxDist;
+
+    float cameraZ;
+    Vector3 targetPos, mousePos, refVel;
+
 
     private Vector3 prev;
 
     void Start()
     {
-        prev = followTarget.transform.position;
+        cameraZ = gameObject.transform.position.z;
     }
 
-    void LateUpdate() {
-        /*Vector3 cursorOffset = new Vector3(Input.GetAxisRaw("Mouse X") * Time.deltaTime * speed,
-             Input.GetAxisRaw("Mouse Y") * Time.deltaTime * speed, 0f);
-        cursorOffset += (followTarget.transform.position - prev);
-        transform.position += cursorOffset;
-        prev = followTarget.transform.position;*/
+    void Update() {
+        GetMouse(); 
+        GetNewPos();
+        MoveCamera();
+    }
 
-        Vector3 cursorOffset = new Vector3(0f, 0f, 0f);
-        cursorOffset += (followTarget.transform.position - prev);
-        transform.position += cursorOffset;
-        prev = followTarget.transform.position;
+    void GetMouse() {
+        mousePos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+        mousePos *= 2;
+        mousePos -= Vector3.one;
+    }
 
-        Vector3 pz = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        pz.z = 0;
+    void GetNewPos() {
+        targetPos = mousePos * maxDist + followTarget.position;
+        targetPos.z = cameraZ;
+    }
+
+    void MoveCamera() {
+        //transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref refVel, speed);
+        //the above line screws stuff up, makes it really jittery
+        transform.position = targetPos;
     }
 }
