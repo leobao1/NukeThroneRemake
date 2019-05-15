@@ -63,9 +63,11 @@
     <Compile Include="Assets\Scripts\Archive\LevelGenerator.cs" />
     <Compile Include="Assets\Scripts\Archive\Rotate.cs" />
     <Compile Include="Assets\Scripts\Archive\SlowGenerator.cs" />
+    <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\GunControl.cs" />
     <Compile Include="Assets\Scripts\Initialize.cs" />
+    <Compile Include="Assets\Scripts\InRange.cs" />
     <Compile Include="Assets\Scripts\LevelGenCust.cs" />
     <Compile Include="Assets\Scripts\PlayerControl.cs" />
     <Compile Include="Assets\Scripts\Proj.cs" />

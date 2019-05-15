@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2992571446245714520}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2992571446789145964}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ProjSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2992571447261484079}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 2992571448021892339}
   - component: {fileID: 2992571448021892340}
   - component: {fileID: 4563145098198156561}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -197,6 +197,8 @@ MonoBehaviour:
   gunTip: {fileID: 2992571446789145964}
   projectile: {fileID: 1407224842197806172, guid: 0da52dc94dfe8a542884df4eb840088c,
     type: 3}
+  inaccuracy: 0
+  attackSpeed: 0
 --- !u!1 &2992571448073297589
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2992571448073297588}
   - component: {fileID: 2992571448073297587}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BodySprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2992571448244923614}
   - component: {fileID: 2992571448244923612}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GunSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
