@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour {
     public float speed;
-    public Transform player;
 
     private Rigidbody2D rb;
 
@@ -26,7 +25,7 @@ public class PlayerControl : MonoBehaviour {
         moveHorizontal = Input.GetAxis("Horizontal");
         moveVertical = Input.GetAxis("Vertical");
 
-        playerPos = player.position;
+        playerPos = transform.position;
     }
 
     void MovePlayer() {

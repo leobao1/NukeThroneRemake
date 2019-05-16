@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\EnemyProj.cs" />
     <Compile Include="Assets\Scripts\Archive\LevelGenerator.cs" />
     <Compile Include="Assets\Scripts\Archive\Rotate.cs" />
     <Compile Include="Assets\Scripts\Archive\SlowGenerator.cs" />

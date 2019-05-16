@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GunControl : MonoBehaviour {
-    public Transform player;
     public Transform gun;
     public Transform gunTip;
     public GameObject projectile;
     public float inaccuracy;
-    public float attackSpeed;
+    public float attackDelay; 
 
     Vector3 playerPos;
     Vector3 mousePos;
@@ -29,7 +28,7 @@ public class GunControl : MonoBehaviour {
     }
 
     void Inputs() {
-        playerPos = player.position;
+        playerPos = transform.position;
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
 
@@ -43,7 +42,7 @@ public class GunControl : MonoBehaviour {
     }
 
     void Shoot() {
-        canAttack = (Time.time - lastShot) > attackSpeed;
+        canAttack = (Time.time - lastShot) > attackDelay;
         if (gunPress && canAttack) {
             float angleShift = Random.Range(-1*inaccuracy, inaccuracy);
             float projAngle = angle + angleShift;
