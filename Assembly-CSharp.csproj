@@ -60,19 +60,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\EnemyProj.cs" />
     <Compile Include="Assets\Scripts\Archive\LevelGenerator.cs" />
     <Compile Include="Assets\Scripts\Archive\Rotate.cs" />
     <Compile Include="Assets\Scripts\Archive\SlowGenerator.cs" />
-    <Compile Include="Assets\Scripts\EnemyController.cs" />
-    <Compile Include="Assets\Scripts\FollowPlayer.cs" />
-    <Compile Include="Assets\Scripts\GunControl.cs" />
-    <Compile Include="Assets\Scripts\Initialize.cs" />
-    <Compile Include="Assets\Scripts\InRange.cs" />
-    <Compile Include="Assets\Scripts\LevelGenCust.cs" />
-    <Compile Include="Assets\Scripts\PlayerControl.cs" />
-    <Compile Include="Assets\Scripts\Proj.cs" />
-    <Compile Include="Assets\Scripts\Restarter.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\EnemyAI.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\EnemyData.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\EnemyProj.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\InRange.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\GunControl.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\PlayerControl.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\PlayerData.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\Proj.cs" />
+    <Compile Include="Assets\Scripts\World Scripts\FollowPlayer.cs" />
+    <Compile Include="Assets\Scripts\World Scripts\Initialize.cs" />
+    <Compile Include="Assets\Scripts\World Scripts\LevelGenCust.cs" />
+    <Compile Include="Assets\Scripts\World Scripts\Restarter.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/leoba/Documents/Unity/NT/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

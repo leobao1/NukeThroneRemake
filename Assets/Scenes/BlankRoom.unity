@@ -394,7 +394,7 @@ PrefabInstance:
     - target: {fileID: 4563145098198156561, guid: fb2036f8c22226449800ec5d6f4c0018,
         type: 3}
       propertyPath: inaccuracy
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4563145098198156561, guid: fb2036f8c22226449800ec5d6f4c0018,
         type: 3}
@@ -404,7 +404,22 @@ PrefabInstance:
     - target: {fileID: 4563145098198156561, guid: fb2036f8c22226449800ec5d6f4c0018,
         type: 3}
       propertyPath: attackDelay
-      value: 0.05
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1042923156488627274, guid: fb2036f8c22226449800ec5d6f4c0018,
+        type: 3}
+      propertyPath: speed
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1042923156488627274, guid: fb2036f8c22226449800ec5d6f4c0018,
+        type: 3}
+      propertyPath: health
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1042923156488627274, guid: fb2036f8c22226449800ec5d6f4c0018,
+        type: 3}
+      propertyPath: damage
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb2036f8c22226449800ec5d6f4c0018, type: 3}
@@ -1215,6 +1230,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510458236942759588, guid: 13ba85095fb460447935154175b4dabd,
+        type: 3}
+      propertyPath: health
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510458236942759588, guid: 13ba85095fb460447935154175b4dabd,
+        type: 3}
+      propertyPath: speed
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13ba85095fb460447935154175b4dabd, type: 3}
