@@ -9,8 +9,8 @@ public class LevelGenCust : MonoBehaviour
     Vector2 roomSize = new Vector2(30, 30);
     float worldUnitsInOneGridCell = 1;//These two can be made public later, for now keep it as is
 
-    enum spaceType {empty, floor, wall };
-    spaceType[,] grid;
+    public enum SpaceType {empty, floor, wall };
+    SpaceType[,] grid;
 
     List<walker> walkers;
     public float chanceWalkerChangeDir, chanceWalkerSpawn, chanceWalkerDestoy;//Default: 0.5,0.05,0.05
@@ -40,12 +40,12 @@ public class LevelGenCust : MonoBehaviour
         roomHeight = Mathf.RoundToInt(roomSize.x / worldUnitsInOneGridCell);
         roomWidth = Mathf.RoundToInt(roomSize.y / worldUnitsInOneGridCell);
         //create grid
-        grid = new spaceType[roomWidth, roomHeight];
+        grid = new SpaceType[roomWidth, roomHeight];
         //set grid's default state
         for (int x = 0; x < roomWidth - 1; x++) {
             for (int y = 0; y < roomHeight - 1; y++) {
                 //make every cell "empty"
-                grid[x, y] = spaceType.empty;
+                grid[x, y] = SpaceType.empty;
             }
         }
         //set first walker
@@ -66,7 +66,7 @@ public class LevelGenCust : MonoBehaviour
         do {
             //create floor at position of every walker
             foreach (walker myWalker in walkers) {
-                grid[(int)myWalker.pos.x, (int)myWalker.pos.y] = spaceType.floor;
+                grid[(int)myWalker.pos.x, (int)myWalker.pos.y] = SpaceType.floor;
             }
             //chance: destroy walker
             int numberChecks = walkers.Count; //might modify count while in this loop
@@ -123,19 +123,19 @@ public class LevelGenCust : MonoBehaviour
         for (int x = 0; x < roomWidth - 1; x++) {
             for (int y = 0; y < roomHeight - 1; y++) {
                 //if theres a floor, check the spaces around it
-                if (grid[x, y] == spaceType.floor) {
+                if (grid[x, y] == SpaceType.floor) {
                     //if any surrounding spaces are empty, place a wall
-                    if (grid[x, y + 1] == spaceType.empty) {
-                        grid[x, y + 1] = spaceType.wall;
+                    if (grid[x, y + 1] == SpaceType.empty) {
+                        grid[x, y + 1] = SpaceType.wall;
                     }
-                    if (grid[x, y - 1] == spaceType.empty) {
-                        grid[x, y - 1] = spaceType.wall;
+                    if (grid[x, y - 1] == SpaceType.empty) {
+                        grid[x, y - 1] = SpaceType.wall;
                     }
-                    if (grid[x + 1, y] == spaceType.empty) {
-                        grid[x + 1, y] = spaceType.wall;
+                    if (grid[x + 1, y] == SpaceType.empty) {
+                        grid[x + 1, y] = SpaceType.wall;
                     }
-                    if (grid[x - 1, y] == spaceType.empty) {
-                        grid[x - 1, y] = spaceType.wall;
+                    if (grid[x - 1, y] == SpaceType.empty) {
+                        grid[x - 1, y] = SpaceType.wall;
                     }
                 }
             }
@@ -146,7 +146,7 @@ public class LevelGenCust : MonoBehaviour
         for (int x = 0; x < roomWidth - 1; x++) {
             for (int y = 0; y < roomHeight - 1; y++) {
                 //if theres a wall, check the spaces around it
-                if (grid[x, y] == spaceType.wall) {
+                if (grid[x, y] == SpaceType.wall) {
                     //assume all space around wall are floors
                     bool allFloors = true;
                     //check each side to see if they are all floors
@@ -161,13 +161,13 @@ public class LevelGenCust : MonoBehaviour
                                 //skip corners and center
                                 continue;
                             }
-                            if (grid[x + checkX, y + checkY] != spaceType.floor) {
+                            if (grid[x + checkX, y + checkY] != SpaceType.floor) {
                                 allFloors = false;
                             }
                         }
                     }
                     if (allFloors) {
-                        grid[x, y] = spaceType.floor;
+                        grid[x, y] = SpaceType.floor;
                     }
                 }
             }
@@ -177,12 +177,12 @@ public class LevelGenCust : MonoBehaviour
         for (int x = 0; x < roomWidth; x++) {
             for (int y = 0; y < roomHeight; y++) {
                 switch (grid[x, y]) {
-                    case spaceType.empty:
+                    case SpaceType.empty:
                         break;
-                    case spaceType.floor:
+                    case SpaceType.floor:
                         Spawn(x, y, floorObj);
                         break;
-                    case spaceType.wall:
+                    case SpaceType.wall:
                         Spawn(x, y, wallObj);
                         break;
                 }
@@ -206,8 +206,8 @@ public class LevelGenCust : MonoBehaviour
     }
     int NumberOfFloors() {
         int count = 0;
-        foreach (spaceType space in grid) {
-            if (space == spaceType.floor) {
+        foreach (SpaceType space in grid) {
+            if (space == SpaceType.floor) {
                 count++;
             }
         }
@@ -219,5 +219,9 @@ public class LevelGenCust : MonoBehaviour
         Vector2 spawnPos = new Vector2(x, y) * worldUnitsInOneGridCell - offset;
         //spawn object
         Instantiate(toSpawn, spawnPos, Quaternion.identity);
+    }
+
+    public SpaceType[,] GetGrid() {
+        return grid;
     }
 }

@@ -149,7 +149,7 @@ public class EnemyAI : MonoBehaviour
     }//State Machine Ends Here ---------------------------------------------------------------------
 
     void Move() {
-        Vector2 movement = Random.insideUnitCircle;
+        Vector2 movement = Random.insideUnitCircle.normalized;
         rb.velocity = movement * speed;
     }
 
@@ -164,6 +164,6 @@ public class EnemyAI : MonoBehaviour
         EnemyProj newProj = Instantiate(projectile, gunTip.position, rotation).GetComponent<EnemyProj>();
         float projAngleRad = projAngle * Mathf.Deg2Rad;
         Vector3 projVec = new Vector3(Mathf.Cos(projAngleRad), Mathf.Sin(projAngleRad), 0);
-        newProj.Construct(projVec);
+        newProj.Construct(projVec, damage);
     }
 }

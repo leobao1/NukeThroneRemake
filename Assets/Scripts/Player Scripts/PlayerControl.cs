@@ -36,6 +36,8 @@ public class PlayerControl : MonoBehaviour {
 
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 
-        rb.velocity = movement * speed * Time.deltaTime;
+        if (!(rb.velocity.magnitude > Vector2.one.magnitude * speed * Time.deltaTime)) {
+            rb.velocity = movement * speed * Time.deltaTime;
+        }
     }
 }

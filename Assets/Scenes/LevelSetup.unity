@@ -384,6 +384,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4563145098198156561, guid: fb2036f8c22226449800ec5d6f4c0018,
+        type: 3}
+      propertyPath: inaccuracy
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563145098198156561, guid: fb2036f8c22226449800ec5d6f4c0018,
+        type: 3}
+      propertyPath: attackDelay
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1042923156488627274, guid: fb2036f8c22226449800ec5d6f4c0018,
+        type: 3}
+      propertyPath: speed
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1042923156488627274, guid: fb2036f8c22226449800ec5d6f4c0018,
+        type: 3}
+      propertyPath: damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1042923156488627274, guid: fb2036f8c22226449800ec5d6f4c0018,
+        type: 3}
+      propertyPath: health
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2992571448021892340, guid: fb2036f8c22226449800ec5d6f4c0018,
         type: 3}
       propertyPath: m_Enabled
