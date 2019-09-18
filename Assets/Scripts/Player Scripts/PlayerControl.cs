@@ -24,20 +24,21 @@ public class PlayerControl : MonoBehaviour {
     }
 
     void Inputs() {
-        moveHorizontal = Input.GetAxis("Horizontal");
-        moveVertical = Input.GetAxis("Vertical");
+        moveHorizontal = Input.GetAxisRaw("Horizontal");
+        moveVertical = Input.GetAxisRaw("Vertical");
 
         playerPos = transform.position;
     }
 
     void MovePlayer() {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+        if (movement.magnitude > Vector2.one.magnitude) {
+            movement.Normalize();
+        }
 
-        if (!(rb.velocity.magnitude > Vector2.one.magnitude * speed * Time.deltaTime)) {
-            rb.velocity = movement * speed * Time.deltaTime;
+        //TODO: this is a super hacky way to test for the dash, make it better
+        if (rb.velocity.magnitude < Vector2.one.magnitude * 10f) {//the 10f is 2/3 of the dash speed of x15f
+            rb.velocity = movement * speed;
         }
     }
 }

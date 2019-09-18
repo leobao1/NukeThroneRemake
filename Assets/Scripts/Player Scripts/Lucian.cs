@@ -97,7 +97,11 @@ public class Lucian : MonoBehaviour
 
     IEnumerator DashWait() {
         Vector2 orig = rb.velocity;
-        rb.velocity = orig.normalized * 15f;
+        if (orig.magnitude < 0.1f) {
+            rb.velocity = mouseVec.normalized * 15f;
+        } else {
+            rb.velocity = orig.normalized * 15f;
+        }
         yield return new WaitForSeconds(0.1f);
         rb.velocity = orig;
     }

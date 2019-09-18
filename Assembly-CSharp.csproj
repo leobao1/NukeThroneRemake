@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AnimationControl.cs" />
     <Compile Include="Assets\Scripts\Archive\LevelGenerator.cs" />
     <Compile Include="Assets\Scripts\Archive\Rotate.cs" />
     <Compile Include="Assets\Scripts\Archive\SlowGenerator.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Assets\Scripts\Enemy Scripts\InRange.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\GunControl.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\Lucian.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\PlayerAnimation.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\PlayerControl.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\PlayerData.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\Proj.cs" />
@@ -78,19 +80,19 @@
     <Compile Include="Assets\Scripts\World Scripts\PlaceEnemy.cs" />
     <Compile Include="Assets\Scripts\World Scripts\Restarter.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/leoba/Documents/Unity/NT/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/Documents/Coding/Unity/NT/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/leoba/Documents/Unity/NT/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/Documents/Coding/Unity/NT/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/leoba/Documents/Unity/NT/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/Documents/Coding/Unity/NT/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/leoba/Documents/Unity/NT/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/Documents/Coding/Unity/NT/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/leoba/Documents/Unity/NT/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>D:/Documents/Coding/Unity/NT/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -294,13 +296,13 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/leoba/Documents/Unity/NT/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>D:/Documents/Coding/Unity/NT/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/leoba/Documents/Unity/NT/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>D:/Documents/Coding/Unity/NT/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/leoba/Documents/Unity/NT/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>D:/Documents/Coding/Unity/NT/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
