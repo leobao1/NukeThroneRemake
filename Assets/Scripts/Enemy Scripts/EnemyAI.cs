@@ -75,8 +75,7 @@ public class EnemyAI : MonoBehaviour
 
     /*AI description: When aggresive, should randomly alternate between attacking, walking around and idle. After each attack, it MUST 
      * go to idle. From Idle and Walk, it can go to whichever of the other 2. Will not attack immediatly upon being aggresive
-     * Non aggresive will just walk around 
-     * In addition, enemies may proceed with an action immediatly after attacking BUT NOT IMMEDIATLY AFTER WALKING OR IDLE*/
+     * Non aggresive will just walk around */
     void DetermineAction() {
 
         if (!(Time.time - lastAction > delayBetweenActions)) {

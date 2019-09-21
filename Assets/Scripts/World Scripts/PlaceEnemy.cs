@@ -8,7 +8,7 @@ public class PlaceEnemy : MonoBehaviour
 
     void Start()
     {
-        grid = GetComponent<LevelGenCust>().GetGrid();
+        //grid = GetComponent<LevelGenCust>().GetGrid();
     }
 
     // Update is called once per frame
